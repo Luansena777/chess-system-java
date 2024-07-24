@@ -1,6 +1,6 @@
 package application;
 
-import Chess.ChessPiece;
+import chess.ChessPiece;
 
 public class UI {
 
@@ -11,8 +11,7 @@ public class UI {
      */
 
     public static void printBoard(ChessPiece[][] pieces) {
-        for (int i = 0; i < pieces.length; i++) {// Loop para percorrer cada linha do tabuleiro
-            // Imprime o número da linha (8 a 1)
+        for (int i = 0; i < pieces.length; i++) {// Loop para percorrer cada linha do tabuleiro.
             System.out.print((8 - i) + " ");
             for (int j = 0; j < pieces.length; j++) { // Loop para percorrer cada coluna do tabuleiro
                 // Chama o método para imprimir a peça na posição atual
