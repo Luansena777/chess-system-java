@@ -22,7 +22,7 @@ public class Board {
         return columns;
     }
 
-    public Piece piece(int row, int column) {
+    public Piece piece(int row, int column) { // Retorna a peça na posição especificada por linha e coluna
         if (!positionExits(row, column)) {
             throw new BoardException("Posição não encontrada no tabuleiro.");
         }
@@ -48,11 +48,11 @@ public class Board {
         return row >= 0 && row < this.rows && column >= 0 && column < this.columns;
     }
 
-    public boolean positionExits(Position position) {
+    public boolean positionExits(Position position) { // Verifica se existe a posição no tabuleiro
         return positionExits(position.getRow(), position.getColumn());
     }
 
-    public boolean thereIsAPiece(Position position) { //Verifica se há uma peça na posicao
+    public boolean thereIsAPiece(Position position) { //Verifica se há uma peça na posicao fornecida
         if (!positionExits(position)) {
             throw new BoardException("Posição não encontrada no tabuleiro.");
         }
