@@ -1,5 +1,7 @@
 package boardgame;
 
+import java.io.StringWriter;
+
 public class Board {
     private int rows;
     private int columns;
@@ -44,6 +46,19 @@ public class Board {
         piece.position = position;
     }
 
+    public Piece removePiece(Position position) {
+        if (!positionExits(position)) {
+            throw new BoardException("Posição não encontrada no tabuleiro.");
+        }
+        if (piece(position) == null) {
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
+    }
+
     public boolean positionExits(int row, int column) {
         return row >= 0 && row < this.rows && column >= 0 && column < this.columns;
     }
@@ -58,4 +73,6 @@ public class Board {
         }
         return piece(position) != null;
     }
+
+
 }
