@@ -65,6 +65,19 @@ public class UI {
         System.out.println("  a b c d e f g h"); // Imprime os identificadores das colunas
     }
 
+    public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
+        for (int i = 0; i < pieces.length; i++) {// Loop para percorrer cada linha do tabuleiro.
+            System.out.print((8 - i) + " ");
+            for (int j = 0; j < pieces.length; j++) { // Loop para percorrer cada coluna do tabuleiro
+                // Chama o método para imprimir a peça na posição atual
+                printPiece(pieces[i][j], possibleMoves[i][j]);
+            }
+            System.out.println(); // Pula para a próxima linha após imprimir todas as peças na linha atual
+        }
+        System.out.println("  a b c d e f g h"); // Imprime os identificadores das colunas
+    }
+
+
 
     private static void printPiece(ChessPiece piece, boolean background) {
         if (background) {
